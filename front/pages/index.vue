@@ -8,8 +8,10 @@
 <script>
 // <script>の中でimportし、importしたコンポーネントをexportの中でcomponentsに登録
   import AddTodo from "@/components/AddTodo";
+// @はv-on:@submit="addTodo"の省略形
   import TodoList from "@/components/TodoList";
-
+// axiosのインポート
+  import axios from "@/plugins/axios";
   export default {
     components: {
       AddTodo,
@@ -21,7 +23,8 @@
       };
     },
     methods: {
-      addTodo(title) {
+      async addTodo(title) {
+        await axios.post("/v1/todos", { title });
         this.todos.push({
           title
         });
