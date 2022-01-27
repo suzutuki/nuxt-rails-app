@@ -16,15 +16,12 @@
 
 <script>
 export default {
+// index.vueでは:todos="todos"の部分で、todosというデータをTodoList.vueに渡していた。
+// この左側の:todosに当たる部分が、今回のpropsに定義している部分
+// propsは、親コンポーネントから子コンポーネントに値を渡す時に使う
+  props: ["todos"],
   data() {
     return {
-// titleはheadersのvalueがtitleの列に、usernameはheadersのvalueがusernameの列へ表示される
-      todos: [
-        {
-          title: "test",
-          username: "太郎"
-        }
-      ],
       search: "",
       headers: [
         {

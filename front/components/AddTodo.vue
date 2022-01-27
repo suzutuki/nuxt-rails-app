@@ -9,6 +9,7 @@
         </v-col>
         <v-col cols="12" md="4">
 <!-- @clickという記法を使って、このボタンをクリックしたときに、methodsの中で定義した関数を呼び出す -->
+<!-- クリックをすると、methodsに登録しているhandleSubmitと言う関数を実行 -->
           <v-btn @click="handleSubmit">作成</v-btn>
         </v-col>
       </v-row>
@@ -25,6 +26,7 @@ export default {
   },
   methods: {
     handleSubmit() {
+      this.$emit("submit", this.title);
       this.title = "";
     }
   }
