@@ -1,6 +1,6 @@
 export const state = () => ({
   // currentUserという値として、ユーザーの情報の入れ物を作成
-    currentUser: null
+    currentUser: {}
   });
   
   export const mutations = {
