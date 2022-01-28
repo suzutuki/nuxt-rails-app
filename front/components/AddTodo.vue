@@ -30,7 +30,7 @@ export default {
     };
   },
 
-  computed: {
+   computed: {
     user() {
       return this.$store.state.auth.currentUser;
     },
