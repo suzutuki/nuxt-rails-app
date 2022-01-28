@@ -8,6 +8,7 @@
       app
     >
       <v-list>
+        <!-- 複数のアイテムをリストへ表示させるときに使用 -->
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
