@@ -2,6 +2,7 @@
   <div v-if="user">
     <p>名前：{{ user.name }}</p>
     <AddTodo @submit="addTodo" />
+    <!-- :todosの値は、Vuexで管理しているcurrentUserのtodoプロパティの値を送る。 -->
     <TodoList :todos="user.todos" />
   </div>
 </template>
@@ -34,7 +35,7 @@ export default {
     console.log("API_KEY:", process.env.API_KEY);
   },
   methods: {
-    async addTodo(title) {
+    async addTodo(todo) {
       const { data } = await axios.post("/v1/todos", { todo });
       this.$store.dispatch("auth/setUser", {
         ...this.user,
