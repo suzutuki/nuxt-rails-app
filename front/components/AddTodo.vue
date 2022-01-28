@@ -26,7 +26,7 @@
 export default {
   data() {
     return {
-      title: "",
+      title: ""
     };
   },
 
@@ -45,11 +45,10 @@ export default {
 
       this.$emit("submit", todo);
       this.title = "";
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style>
 </style>
-
