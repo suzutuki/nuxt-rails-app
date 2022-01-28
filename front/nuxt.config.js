@@ -30,6 +30,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    // ここに記載することで、リロードするたびに毎回呼び出してくれる。
     "@/plugins/authCheck"
   ],
 
