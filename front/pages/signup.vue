@@ -3,8 +3,20 @@
     <v-col cols="12" md="4">
       <h2>Sign Up</h2>
       <form>
-        <v-text-field v-model="name" :counter="10" label="Name" data-vv-name="name" required></v-text-field>
-        <v-text-field v-model="email" :counter="20" label="Email" data-vv-name="email" required></v-text-field>
+        <v-text-field
+          v-model="name"
+          :counter="10"
+          label="Name"
+          data-vv-name="name"
+          required
+        ></v-text-field>
+        <v-text-field
+          v-model="email"
+          :counter="20"
+          label="Email"
+          data-vv-name="email"
+          required
+        ></v-text-field>
         <v-text-field
           v-model="password"
           label="password"
@@ -42,7 +54,7 @@ export default {
       passwordConfirm: "",
       show1: false,
       show2: false,
-      error: ""
+      error: "",
     };
   },
   methods: {
@@ -53,8 +65,8 @@ export default {
       const res = await firebase
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
-        .catch(error => {
-          this.error = (code => {
+        .catch((error) => {
+          this.error = ((code) => {
             switch (code) {
               case "auth/email-already-in-use":
                 return "既にそのメールアドレスは使われています";
@@ -71,22 +83,30 @@ export default {
       const user = {
         email: res.user.email,
         name: this.name,
-        uid: res.user.uid
+        uid: res.user.uid,
       };
+      // stateのisLoadingをtrueにする。
+      this.$store.dispatch("loading/setLoading", true); // 追加
 
-      await axios
+      const {
+        // const { data } = を追加
+        data,
+      } = await axios
         .post("/v1/users", {
-          user
+          user,
         })
-        .catch(err => {
+        .catch((err) => {
           console.log({
-            err
+            err,
           });
         });
-        
+      setTimeout(() => {
+        this.$store.dispatch("loading/setLoading", false);
+      }, 3000);
+      this.$store.dispatch("auth/setUser", data);
       this.$router.push("/");
-    }
-  }
+    },
+  },
 };
 </script>
 

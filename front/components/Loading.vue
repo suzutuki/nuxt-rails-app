@@ -1,4 +1,5 @@
 <template>
+<!-- computedで指定している値をチェックし、表示非表示を切り替える。 -->
   <div class="loader-container" v-if="loading">
     <div class="loaders">
       <div class="ball-clip-rotate">
