@@ -1,5 +1,5 @@
 class V1::TodosController < ApplicationController
-  # 表示テスト用のアクション
+
   def index
     todo = Todo.all
     render json: todo
@@ -12,6 +12,7 @@ class V1::TodosController < ApplicationController
     else
       render json: todo.errors
     end
+
     puts params
   end
 
