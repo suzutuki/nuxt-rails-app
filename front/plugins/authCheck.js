@@ -10,7 +10,6 @@ const authCheck = ({ store, redirect }) => {
           uid: user.uid,
         },
       });
-      console.log("ログインしているユーザー:", data);
     //   auth.jsのsetUserアクションに適用
       store.dispatch("auth/setUser", data)
     } else {
