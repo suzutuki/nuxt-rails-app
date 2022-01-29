@@ -4,22 +4,9 @@
       <Success />
       <Loading />
     </div>
-    <v-navigation-drawer
-      v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
-      fixed
-      app
-    >
+    <v-navigation-drawer v-model="drawer" :mini-variant="miniVariant" :clipped="clipped" fixed app>
       <v-list>
-        <!-- 複数のアイテムをリストへ表示させるときに使用 -->
-        <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-        >
+        <v-list-item v-for="(item, i) in items" :key="i" :to="item.to" router exact>
           <v-list-item-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-action>
@@ -32,7 +19,7 @@
     <v-app-bar :clipped-left="clipped" fixed app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-btn icon @click.stop="miniVariant = !miniVariant">
-        <v-icon>mdi-{{ `chevron-${miniVariant ? "right" : "left"}` }}</v-icon>
+        <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
       </v-btn>
       <v-btn icon @click.stop="clipped = !clipped">
         <v-icon>mdi-application</v-icon>
@@ -48,14 +35,16 @@
     </v-app-bar>
     <v-main>
       <v-container>
-        <Nuxt />
+        <nuxt />
       </v-container>
     </v-main>
     <v-navigation-drawer v-model="rightDrawer" :right="right" temporary fixed>
       <v-list>
         <v-list-item @click.native="right = !right">
           <v-list-item-action>
-            <v-icon light> mdi-repeat </v-icon>
+            <v-icon light>
+              mdi-repeat
+            </v-icon>
           </v-list-item-action>
           <v-list-item-title>Switch drawer (click me)</v-list-item-title>
         </v-list-item>
@@ -68,59 +57,56 @@
 </template>
 
 <script>
-import Loading from "@/components/Loading";
-import Success from "@/components/Success"; 
-export default {
-  data() {
-    return {
-      clipped: false,
-      drawer: false,
-      fixed: false,
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: "TODO App",
-    };
-  },
-
-  components: {
-    Loading,
-    Success
-  },
-
-  computed: {
-    user() {
-      return this.$store.state.auth.currentUser;
-    },
-    items() {
-      if (this.user) {
-        return [
-          {
-            icon: "mdi-apps",
-            title: "TODOS",
-            to: "/",
-          },
-          {
-            icon: "mdi-chart-bubble",
-            title: "MYPAGE",
-            to: "/mypage",
-          },
-        ];
-      } else {
-        return [
-          {
-            icon: "mdi-apps",
-            title: "LOGIN",
-            to: "/login",
-          },
-          {
-            icon: "mdi-chart-bubble",
-            title: "SIGNUP",
-            to: "/signup",
-          },
-        ];
+import Loading from "@/components/Loading";　//追加
+import Success from "@/components/Success" //追加
+  export default {
+    data() {
+      return {
+        clipped: false,
+        drawer: false,
+        fixed: false,
+        miniVariant: false,
+        right: true,
+        rightDrawer: false,
+        title: 'TODO App'
       }
     },
-  },
-};
+    components: {
+      Loading,
+      Success  //追加
+    },
+    computed: {
+      user() {
+        return this.$store.state.auth.currentUser;
+      },
+      items() {
+        if (this.user) {
+          return [{
+              icon: "mdi-apps",
+              title: "TODOS",
+              to: "/"
+            },
+            {
+              icon: "mdi-chart-bubble",
+              title: "MYPAGE",
+              to: "/mypage"
+            }
+          ];
+        } else {
+          return [{
+              icon: "mdi-apps",
+              title: "LOGIN",
+              to: "/login"
+            },
+            {
+              icon: "mdi-chart-bubble",
+              title: "SIGNUP",
+              to: "/signup"
+            }
+          ];
+        }
+      }
+    }
+  }
+
 </script>

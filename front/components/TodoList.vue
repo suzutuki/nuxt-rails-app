@@ -32,12 +32,12 @@
             text: "ユーザー名",
             value: "username"
           },
-
+          // ここから追加
           {
             text: "Actions",
             value: "action",
           },
-
+          // ここまで追加
         ]
       };
     },
