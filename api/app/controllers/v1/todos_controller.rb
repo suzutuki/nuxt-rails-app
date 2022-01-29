@@ -1,4 +1,5 @@
 class V1::TodosController < ApplicationController
+  # 表示テスト用のアクション
   def index
     todo = Todo.all
     render json: todo
@@ -11,7 +12,6 @@ class V1::TodosController < ApplicationController
     else
       render json: todo.errors
     end
-
     puts params
   end
 
@@ -28,3 +28,4 @@ class V1::TodosController < ApplicationController
     params.require(:todo).permit(:title, :user_id)
   end
 end
+
