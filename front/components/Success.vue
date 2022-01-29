@@ -26,7 +26,7 @@
     text-align: center;
     line-height: 56px;
     width: 100%;
-    background: rgb(193, 245, 193);
+    background: rgb(3, 3, 3);
     color: #fff;
   }
 

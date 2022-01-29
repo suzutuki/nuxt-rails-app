@@ -58,6 +58,7 @@ export default {
         });
       //   エラーが起きなかった時にページを遷移させる
       if (this.error === null) {
+      // 成功した時にstatusにtrue、messageにログインしましたという値をセット
         this.$store.dispatch("notification/setNotice", {
           status: true,
           message: "ログインしました",
