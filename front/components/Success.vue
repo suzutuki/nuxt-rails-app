@@ -1,10 +1,12 @@
 <template>
   <transition name="fade">
+      <!-- v-ifを使って、メッセージの表示非表示を管理 -->
     <div v-if="notice.status" class="success">{{notice.message}}</div>
   </transition>
 </template>
 
 <script>
+// Vuexのstateのstatusを参照
   export default {
     computed: {
       notice() {
