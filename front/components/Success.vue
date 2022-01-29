@@ -9,6 +9,7 @@
 // Vuexのstateのstatusを参照
   export default {
     computed: {
+// stateのsuccessまでnotice()として値を返しているので、notice.statusとなる
       notice() {
         return this.$store.state.notification.success;
       }

@@ -1,10 +1,9 @@
 <template>
   <v-app dark>
-
     <div>
+      <Success />
       <Loading />
     </div>
-
     <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
