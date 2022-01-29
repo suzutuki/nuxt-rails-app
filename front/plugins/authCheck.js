@@ -2,7 +2,6 @@ import firebase from "@/plugins/firebase";
 import axios from "@/plugins/axios";
 
 const authCheck = ({ store, redirect }) => {
-    // onAuthStateChanged ログイン状態のユーザーの情報をFirebaseへ確認
   firebase.auth().onAuthStateChanged(async user => {
     if (user) {
       const { data } = await axios.get('/v1/users', {
@@ -10,7 +9,7 @@ const authCheck = ({ store, redirect }) => {
           uid: user.uid,
         },
       });
-    //   auth.jsのsetUserアクションに適用
+      console.log("ログインしているユーザー:", data);
       store.dispatch("auth/setUser", data)
     } else {
       store.dispatch("auth/setUser", null)

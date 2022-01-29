@@ -1,11 +1,14 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
-  // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
-  ssr: false,
+
   server: {
     port: 8080 
   },
+
+  // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
+  ssr: false,
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - front',
@@ -16,8 +19,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { hid: 'description', name: 'description', content: '' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -30,9 +32,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    // ここに記載することで、リロードするたびに毎回呼び出してくれる。
-    "@/plugins/authCheck", 
-    "@/plugins/vuetify",
+    "@/plugins/authCheck",
+    "@/plugins/vuetify"
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -42,7 +43,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    '@nuxtjs/dotenv',
+    '@nuxtjs/dotenv', // 追加
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -52,10 +53,7 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {
-    // Workaround to avoid enforcing hard-coded localhost:3000: https://github.com/nuxt-community/axios-module/issues/308
-    baseURL: '/',
-  },
+  axios: {},
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {
