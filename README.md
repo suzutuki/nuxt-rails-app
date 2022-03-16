@@ -1,9 +1,6 @@
 ## Todo App
 <img width="1094" alt="TodoList" src="https://user-images.githubusercontent.com/61527476/158503186-ee52fb15-c40b-410a-a2db-5d315e72362e.png">
 
-<h2 align="center">LifeHack Tools : あなたの習慣化や目標達成をアシストします</h2>
-目標達成のための複数のライフハックをツール化したものです。
-
 ##App URL https://nuxt-app-33767.web.app/
 
 使用技術
