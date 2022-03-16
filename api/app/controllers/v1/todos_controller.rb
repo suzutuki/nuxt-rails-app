@@ -1,5 +1,5 @@
 class V1::TodosController < ApplicationController
-  # 表示テスト用のアクション
+
   def index
     todo = Todo.all
     render json: todo
