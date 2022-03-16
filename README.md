@@ -8,16 +8,16 @@
 
 使用技術
 
-・Ruby                  3.0.0
-・Ruby on Rails         6.1.3.2
-・Firebase              9.6.4
-・puma                  5.0
-・nuxt                  2.15.8
-・vue                   2.6.14
-・vue-server-renderer   2.6.14
-・vue-template-compiler 2.6.14
-・vuetify               2.6.1
-・webpack               4.46.0
+・Ruby                  3.0.0<br>
+・Ruby on Rails         6.1.3.2<br>
+・Firebase              9.6.4<br>
+・puma                  5.0<br>
+・nuxt                  2.15.8<br>
+・vue                   2.6.14<br>
+・vue-server-renderer   2.6.14<br>
+・vue-template-compiler 2.6.14<br>
+・vuetify               2.6.1<br>
+・webpack               4.46.0<br>
 
 
 
